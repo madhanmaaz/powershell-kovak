@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Powershell-Kovak</title>
+    <link rel="shortcut icon" href="./assets/src/icon.png" type="image/x-icon">
+
+    <!-- css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/1.0.0/css/bulma.min.css" />
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/monokai.min.css">
+
+    <!-- script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/powershell.min.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="left">
+            <img src="./assets/src/icon.png" alt="">
+            <div>
+                <h1 class="title is-5">Powershell-Kovak</h1>
+                <p class="subtitle is-6">powershell obfuscation tool</p>
+            </div>
+        </div>
+
+        <a href="https://madhanmaaz.netlify.app" target="_blank">
+            <button class="button is-link">
+                <span class="icon">
+                    <i class="fa-solid fa-window-maximize"></i>
+                </span>
+                <span>WEBSITE</span>
+            </button>
+        </a>
+    </header>
+
+    <section class="main-container">
+        <form>
+            <div class="field">
+                <label class="label">Upload PS File</label>
+                <div class="control">
+                    <input class="input" type="file" required name="file" accept=".ps*" />
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Method</label>
+                <div class="select is-fullwidth">
+                    <select name="method">
+                        <option value="slice">slice</option>
+                        <option value="space">space</option>
+                        <option value="binary">binary</option>
+                        <option value="unicode">unicode</option>
+                        <option value="bool">boolean</option>
+                        <option value="decimal">decimal</option>
+                        <option value="zero">zero</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                    <label class="radio">
+                        <input type="checkbox" name="base64">
+                        Encode with base64
+                    </label>
+                </div>
+            </div>
+
+            <button class="button is-primary is-fullwidth" id="generate-btn">
+                <span class="icon">
+                    <i class="fa-solid fa-person-running"></i>
+                </span>
+                <span>Generate</span>
+            </button>
+        </form>
+
+
+        <pre class="editor-output"><code class="language-powershell" id="editor-output"></code></pre>
+        <button class="button is-warning" id="copy-btn">
+            <span class="icon is-small">
+                <i class="fa-regular fa-clipboard"></i>
+            </span>
+        </button>
+    </section>
+
+    <script>
+        const form = document.querySelector("form")
+        const editorOutput = document.querySelector("#editor-output")
+        const copyBtn = document.querySelector("#copy-btn")
+
+        form.addEventListener("submit", async e => {
+            e.preventDefault()
+
+            try {
+                const res = await axios.post("/generate", form)
+                editorOutput.innerHTML = res.data
+
+                editorOutput.removeAttribute("data-highlighted")
+                hljs.highlightElement(editorOutput)
+            } catch (error) {
+                editorOutput.innerText = `Error: ${error.response.data}`
+            }
+        })
+
+        copyBtn.addEventListener("click", async () => {
+            await navigator.clipboard.writeText(editorOutput.innerText)
+        })
+    </script>
+</body>
+
+</html>
