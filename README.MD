@@ -4,10 +4,6 @@
 # Powershell-Kovak
 - Powershell-Kovak is a Powershell obfuscation tool built with Node.js, designed for ethical hacking purposes. It aims to provide obfuscation techniques to help secure and protect Powershell scripts used in penetration testing and other security assessments. **Obfuscation Techniques:** Just madness.
 
-# DEMO
-
-https://github.com/madhanmaaz/powershell-kovak/assets/120784875/740a0c80-2268-42f9-bd51-ca5335a25b30
-
 ## Installation
 
 To install Powershell-Kovak, ensure you have Node.js and npm (Node Package Manager) installed on your system. Then, follow these steps:
@@ -28,3 +24,7 @@ npm install
 ```bash
 npm start
 ```
+
+# DEMO
+https://github.com/madhanmaaz/powershell-kovak/assets/120784875/740a0c80-2268-42f9-bd51-ca5335a25b30
+
