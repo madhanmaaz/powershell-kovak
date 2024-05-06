@@ -10,7 +10,7 @@ To install Powershell-Kovak, ensure you have Node.js and npm (Node Package Manag
 
 1. Clone this repository to your local machine:
 ```bash
-git clone https://github.com/madhanmaaz/powershell-kovak.git
+git clone https://github.com/madhanmaaz/powershell-kovak
 ```
 2. Navigate to the project directory:
 ```bash
