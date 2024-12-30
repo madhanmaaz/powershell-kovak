@@ -14,10 +14,10 @@ router.post("/generate", (req, res) => {
         const psCode = req.files.file.data.toString()
         const { method, base64: isBase64 } = req.body
 
-        if (psCode.includes("\n")) {
-            res.status(500).send("multiline string found. single line needed")
-            return
-        }
+        // if (psCode.includes("\n")) {
+        //     res.status(500).send("multiline string found. single line needed")
+        //     return
+        // }
 
         let payload = helper[`${method}Method`](psCode)
         if (isBase64) payload = `powershell -e ${Buffer.from(payload, "utf16le").toString("base64")}`
