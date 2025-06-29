@@ -21,6 +21,9 @@
 
 🕸️ **Live:** [https://madhanmaaz.github.io/powershell-kovak/](https://madhanmaaz.github.io/powershell-kovak/)
 
+#### DEMO
+https://github.com/user-attachments/assets/91909438-b44f-4cd5-b6ad-3c89955b6b8b
+
 #### 🧠 Powershell syntax suggestions
 
 > [!IMPORTANT]
