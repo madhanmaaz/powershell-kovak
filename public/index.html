@@ -4,114 +4,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Powershell-Kovak</title>
-    <link rel="shortcut icon" href="./assets/src/icon.png" type="image/x-icon">
+    <meta name="description" content="Powershell Obfuscation Tool by Madhanmaaz">
+    <meta name="keywords"
+        content="powershell-kovak, obfuscation, tool, madhanmaaz, hacker, ethical hacker, madhan hacker, madhanmaaz, madhanthehacker, cyber security">
+    <meta name="author" content="Madhanmaaz">
+    <meta name="copyright" content="Madhanmaaz">
+    <meta property="og:site_name" content="Powershell Kovak | Powershell Obfuscation Tool by Madhanmaaz">
+    <meta property="og:locale" content="en_US">
+    <meta property="profile:first_name" content="Madhan">
+    <meta property="profile:last_name" content="S">
+    <title>Powershell Kovak | Powershell Obfuscation Tool by Madhanmaaz</title>
+    <!-- schema data -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Powershell Kovak | Powershell Obfuscation Tool by Madhanmaaz",
+            "url": "https://madhanmaaz.github.io/powershell-kovak/",
+        }
+    </script>
 
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <!-- css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/1.0.0/css/bulma.min.css" />
-    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/monokai.min.css">
 
     <!-- script -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/powershell.min.js"></script>
 </head>
 
-<body>
-    <header class="header">
-        <div class="left">
-            <img src="./assets/src/icon.png" alt="">
+<body class="is-flex is-flex-direction-column">
+
+    <header class="header is-flex is-justify-content-space-between is-align-items-center p-2 has-background-black">
+        <div class="is-flex is-align-content-center is-gap-1">
+            <img src="./assets/images/powershell-kovak.png" alt="icon" style="height: 50px;">
             <div>
-                <h1 class="title is-5">Powershell-Kovak</h1>
-                <p class="subtitle is-6">powershell obfuscation tool</p>
+                <h1 class="title is-5 my-0">Powershell Kovak</h1>
+                <p class="is-size-6 is-capitalized">powershell obfuscation tool.</p>
             </div>
         </div>
 
-        <a href="https://madhanmaaz.netlify.app" target="_blank">
-            <button class="button is-link">
-                <span class="icon">
-                    <i class="fa-solid fa-window-maximize"></i>
-                </span>
-                <span>WEBSITE</span>
-            </button>
-        </a>
+        <div class="is-flex is-gap-1 is-align-items-center">
+            <!-- <label class="label is-small is-flex is-gap-1 is-align-items-center m-0 is-clickable is-unselectable">
+                Hide Window
+                <input class="checkbox" type="checkbox" id="hide-window-checkbox" style="width: 20px;height: 20px;">
+            </label>
+            <label class="label is-small is-flex is-gap-1 is-align-items-center m-0 is-clickable is-unselectable">
+                Base64
+                <input class="checkbox" type="checkbox" id="base64-checkbox" style="width: 20px;height: 20px;">
+            </label> -->
+
+            <span class="tag is-info is-small has-text-weight-semibold" id="total-size">0.00 KB</span>
+
+            <div class="select is-small">
+                <select id="method-select" class="is-capitalized">
+                    <option value="slice" selected>slice</option>
+                    <option value="space">space</option>
+                    <option value="binary">binary</option>
+                    <option value="unicode">unicode</option>
+                    <option value="decimal">decimal</option>
+                    <option value="randomv1">randomV1</option>
+                </select>
+            </div>
+
+            <a href="https://github.com/madhanmaaz/powershell-kovak" target="_blank" class="button is-dark is-small">
+                <div class="icon mr-2">
+                    <i class="mdi mdi-github"></i>
+                </div>
+                <span>Github</span>
+            </a>
+            <a href="https://madhanmaaz.netlify.app" target="_blank" class="button is-dark is-small">
+                <span>Author</span>
+            </a>
+        </div>
     </header>
 
-    <section class="main-container">
-        <form>
-            <div class="field">
-                <label class="label">Upload PS File</label>
-                <div class="control">
-                    <input class="input" type="file" required name="file" accept=".ps*" />
-                </div>
-            </div>
+    <p class="author-info">
+        Powershell Kovak is a powershell obfuscation tool, ((100 - 1) + 1)% bypassing antivirus.
+        Created by <a href="https://madhanmaaz.netlify.app" target="_blank">Madhanmaaz</a>
+    </p>
 
-            <div class="field">
-                <label class="label">Method</label>
-                <div class="select is-fullwidth">
-                    <select name="method">
-                        <option value="slice">slice</option>
-                        <option value="space">space</option>
-                        <option value="binary">binary</option>
-                        <option value="unicode">unicode</option>
-                        <option value="bool">boolean</option>
-                        <option value="decimal">decimal</option>
-                        <option value="zero">zero</option>
-                    </select>
-                </div>
-            </div>
+    <div class="main-container p-2 is-flex is-gap-1">
+        <textarea class="textarea" id="editor-input" placeholder="Paste your powershell code here" spellcheck="false"></textarea>
+        <pre><code class="language-powershell" id="editor-output"></code></pre>
 
-            <div class="field">
-                <div class="control">
-                    <label class="radio">
-                        <input type="checkbox" name="base64">
-                        Encode with base64
-                    </label>
-                </div>
-            </div>
-
-            <button class="button is-primary is-fullwidth" id="generate-btn">
-                <span class="icon">
-                    <i class="fa-solid fa-person-running"></i>
-                </span>
-                <span>Generate</span>
-            </button>
-        </form>
-
-
-        <pre class="editor-output"><code class="language-powershell" id="editor-output"></code></pre>
-        <button class="button is-warning" id="copy-btn">
-            <span class="icon is-small">
-                <i class="fa-regular fa-clipboard"></i>
+        <button class="button is-primary is-small" id="copy-btn">
+            <span class="icon">
+                <i class="mdi mdi-content-copy"></i>
             </span>
         </button>
-    </section>
+    </div>
 
-    <script>
-        const form = document.querySelector("form")
-        const editorOutput = document.querySelector("#editor-output")
-        const copyBtn = document.querySelector("#copy-btn")
-
-        form.addEventListener("submit", async e => {
-            e.preventDefault()
-
-            try {
-                const res = await axios.post("/generate", form)
-                editorOutput.innerHTML = res.data
-
-                editorOutput.removeAttribute("data-highlighted")
-                hljs.highlightElement(editorOutput)
-            } catch (error) {
-                editorOutput.innerText = `Error: ${error.response.data}`
-            }
-        })
-
-        copyBtn.addEventListener("click", async () => {
-            await navigator.clipboard.writeText(editorOutput.innerText)
-        })
-    </script>
+    <script src="./js/ps-kovak.js"></script>
+    <script src="./js/app.js"></script>
 </body>
 
 </html>

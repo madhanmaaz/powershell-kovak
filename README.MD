@@ -1,30 +1,52 @@
-<img src="./public/assets/src/body.svg" align="right" width=300>
+<p align="center">
+    <img src="./public/assets/images/powershell-kovak.png" width="130">
+    <h2 align="center">Powershell Kovak</h2>
+    <p align="center">Powershell kovak is a powershell obfuscation tool, ((100 - 1) + 1)% bypassing antivirus.</p>
+    <a href="https://madhanmaaz.github.io/powershell-kovak/">
+        <img src="https://img.shields.io/badge/LIVE-SITE-blue">
+    </a>
+    <a href="https://github.com/madhanmaaz/powershell-kovak/blob/main/LICENSE">
+        <img src="https://img.shields.io/github/license/madhanmaaz/powershell-kovak">
+    </a>
+    <a href="https://github.com/madhanmaaz/powershell-kovak/stargazers">
+        <img src="https://img.shields.io/github/stars/madhanmaaz/powershell-kovak">
+    </a>
+    <a href="https://github.com/madhanmaaz/powershell-kovak/issues">
+        <img src="https://img.shields.io/github/issues/madhanmaaz/powershell-kovak">
+    </a>
+    <a href="https://www.paypal.com/paypalme/madhanmaazbw?country.x=IN&locale.x=en_GB">
+    <img src="https://img.shields.io/badge/Support-PayPal-blue.svg" alt="Donate">
+    </a>
+</p>
 
+🕸️ **Live:** [https://madhanmaaz.github.io/powershell-kovak/](https://madhanmaaz.github.io/powershell-kovak/)
 
-# Powershell-Kovak
-- Powershell-Kovak is a Powershell obfuscation tool built with Node.js, designed for ethical hacking purposes. It aims to provide obfuscation techniques to help secure and protect Powershell scripts used in penetration testing and other security assessments. **Obfuscation Techniques:** Just madness.
+#### 🧠 Powershell syntax suggestions
 
-## Installation
+> [!IMPORTANT]
+> - Control structures (while, if, for, try, catch, function) should open inline on the same line — even if nested.
+> - Put all statements on separate lines, except for control structures.
+> - Break down your code into smaller functions is recommended. (must)
 
-To install Powershell-Kovak, ensure you have Node.js and npm (Node Package Manager) installed on your system. Then, follow these steps:
-
-1. Clone this repository to your local machine:
-```bash
-git clone https://github.com/madhanmaaz/powershell-kovak
+- Recommended (line by line)
+```powershell
+$LHOST = "192.168.43.228";
+$LPORT = 9001;
+while ($true) { if($true) { some content } else { some content } }
+if(1) { some content } else { some content }
+for($i = 0; $i -lt 10; $i++) { some content }
+try { some content } catch { some content }
+function some-function($param) { some content }
+$some-variable = some-content
+$some-variable2 = some-content
 ```
-2. Navigate to the project directory:
-```bash
-cd powershell-kovak
-```
-3. Install dependencies using npm:
-```bash
-npm install
-```
-4. Run the Tool:
-```bash
-npm start
+
+#### 🚫 Not Recommended
+- ❌ Do not write everything in one long line
+```powershell
+$LHOST = "192.168.43.228";$LPORT = 9001;while ($true) { if($true) { some content } else { some content } };if(1) { some content } else { some content };for($i = 0; $i -lt 10; $i++) { some content };try { some content } catch { some content };function some-function($param) { some content };$some-variable = some-content;$some-variable2 = some-content
 ```
 
-# DEMO
-https://github.com/madhanmaaz/powershell-kovak/assets/120784875/740a0c80-2268-42f9-bd51-ca5335a25b30
+## ⚠️ LEGAL
+This tool is for educational and authorized testing only. You're responsible for what you do with it. Don’t be dumb, stay ethical.
 

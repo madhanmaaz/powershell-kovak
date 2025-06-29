@@ -1,0 +1,10 @@
+@import url('https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/bulma/1.0.0/css/bulma.min.css');
+
+* {
+    overflow: unset !important;
+}
+
+.mdi {
+    font-size: 1.4rem;
+}

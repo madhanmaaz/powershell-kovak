@@ -1,0 +1,86 @@
+body {
+    height: 100vh;
+    width: 100%;
+}
+
+.main-container {
+    height: 100% !important;
+    width: 100%;
+    position: relative;
+    overflow: hidden !important;
+}
+
+.main-container textarea {
+    min-width: unset !important;
+    min-height: 100% !important;
+    height: 100% !important;
+    resize: none;
+}
+
+.main-container pre {
+    width: 100%;
+    padding: .5rem !important;
+}
+
+#copy-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    transition: .2s ease-in-out;
+    opacity: 0;
+}
+
+.main-container:hover #copy-btn {
+    opacity: 1;
+}
+
+.main-container pre {
+    white-space: pre-wrap;
+    word-break: break-all;
+    overflow-y: auto !important;
+}
+
+#editor-input {
+    font-family: monospace;
+}
+
+#editor-output {
+    padding: 0 !important;
+    background: none;
+    font-size: 1.2rem;
+    font-family: monospace;
+}
+
+.author-info {
+    color: aliceblue;
+    width: 100%;
+    text-align: center;
+    background: linear-gradient(100deg, #ff2600, #5900ff);
+    padding: .2rem;
+    text-transform: capitalize;
+    margin: 0 !important;
+    font-weight: 600;
+}
+
+.author-info a {
+    color: rgb(255, 242, 0);
+}
+
+@media(max-width: 800px) {
+    .header {
+        flex-direction: column;
+    }
+
+    .main-container {
+        flex-direction: column;
+    }
+
+    .main-container textarea {
+        min-height: 50% !important;
+        height: 50% !important;
+    }
+
+    .main-container pre {
+        height: 100%;
+    }
+}
