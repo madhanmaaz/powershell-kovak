@@ -149,7 +149,7 @@
             output += `&$${variable1}(${variable2}(${builder(element)}));`
         }
 
-        return `function ${variable2}($${variable3}) {$${variable5}= "";foreach ($${variable4} in $${variable3}) {$${variable5} += [char]::ConvertFromUtf32($${variable4});};return $${variable5};};${output}`
+        return `function ${variable2}($${variable3}) {$${variable5}= '';foreach ($${variable4} in $${variable3}) {$${variable5} += [char]::ConvertFromUtf32($${variable4});};return $${variable5};};${output}`
     }
 
     exports.decimalMethod = (psCode) => {
