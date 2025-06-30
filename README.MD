@@ -1,7 +1,7 @@
 <p align="center">
     <img src="./assets/images/powershell-kovak.png" width="130">
     <h2 align="center">Powershell Kovak</h2>
-    <p align="center">Powershell kovak is a powershell obfuscation tool, ((100 - 1) + 1)% bypassing antivirus.</p>
+    <p align="center">Powershell kovak is a powershell obfuscation tool.</p>
     <a href="https://madhanmaaz.github.io/powershell-kovak/">
         <img src="https://img.shields.io/badge/LIVE-SITE-blue">
     </a>
